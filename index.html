@@ -514,9 +514,9 @@
             <form action="" role="form" class="php-email-form" id="submit-form">
               <div class="row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
+                  <label for="name" >Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" onkeyup="validate()" onkeypress="return (event.charCode > 64 && 
-                  event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                  event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required> 
                   <div class="h5">
                     <p id="namep" style="color: red; font-size: 14px;"></p>
                   </div>
@@ -524,7 +524,7 @@
 
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" onkeyup="validateem()">
+                  <input type="email" class="form-control" name="email" id="email"  onkeyup="validateem()" required>
                  <div class="h5">
                     <p id="emailp" style="color: red;  font-size: 14px;"></p>
                   </div>
@@ -533,14 +533,14 @@
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" onkeyup="validatesub()">
+                <input type="text" class="form-control" name="subject" id="subject" onkeyup="validatesub()" required>
                 <div class="h5">
                   <p id="subp" style="color: red; font-size: 14px;"></p>
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" id="message" onkeyup="validatemsg()"></textarea>
+                <textarea class="form-control" name="message" rows="10" id="message" onkeyup="validatemsg()" required></textarea>
                 <div class="h5">
                   <p id="msgp" style="color: red; font-size: 14px;"></p>
                 </div>

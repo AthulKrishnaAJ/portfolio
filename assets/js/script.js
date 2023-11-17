@@ -2,8 +2,8 @@ var count = 0;
 function validate() {
     document.getElementById("send").style.display = "none";
     var name = document.getElementById("name").value;
-    if (name.length < 4) {
-        document.getElementById("namep").innerHTML = "Please Enter at least 4 Characters"
+    if (name.length < 2) {
+        document.getElementById("namep").innerHTML = "Please Enter at least 2 Characters"
     }
     else {
         document.getElementById("namep").innerHTML = " "
@@ -32,8 +32,8 @@ function validate() {
 
    function validatesub() {
         var sub = document.getElementById("subject").value;
-    if (sub.length < 10) {
-        document.getElementById("subp").innerHTML = "Please enter at least 10 characters"
+    if (sub.length < 3) {
+        document.getElementById("subp").innerHTML = "Please enter at least 3 characters"
     }
     else {
         document.getElementById("subp").innerHTML = " "
@@ -45,8 +45,8 @@ function validate() {
 
     function validatemsg() {
         var msg = document.getElementById("message").value;
-    if (msg.length < 10) {
-        document.getElementById("msgp").innerHTML = "Please enter atleast 10 characters"
+    if (msg.length < 5) {
+        document.getElementById("msgp").innerHTML = "Please enter atleast 5 characters"
     }
     else {
         document.getElementById("msgp").innerHTML = ""
@@ -57,47 +57,6 @@ function validate() {
         
     }
 
-
-
-/*function send() {
-    if (count == 4) {
-
-        $("#submit-form").submit((e) => {
-            e.preventDefault()
-            $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbwg0k5uAKid23ZOmOiXKywR8rwt9sFt9ZsmyNS6sA8S--fAcS45tTFP_qBYjFpMMwcyJA/exec",
-                data: $("#submit-form").serialize(),
-                method: "post",
-                beforeSend: function () {
-                    document.getElementById("load").style.display = "block";
-                },
-                success: function () {
-                    document.getElementById("load").style.display = "none";
-                    document.getElementById("send").style.cssText = "display:block; background-color: green;";
-                    document.getElementById("send").innerHTML = "Your Message has send succesfully";
-
-                    setTimeout(function () {
-                        window.location.reload()
-                    }, 3000)
-
-                },
-                error: function (err) {
-                    document.getElementById("load").style.display = "none";
-                    document.getElementById("error").style.display = "block";
-                    document.getElementById("error").innerHTML = "Something went wrong, Try again";
-                     setTimeout(function(){
-                        window.location.reload()   
-                     } ,4000)
-                }
-            })
-        })
-    } else {
-        document.getElementById("send").style.cssText = "display:block; background-color: red;"
-        document.getElementById("send").innerHTML = "Please fill all fields";
-        
-         
-    }
-}*/
 
 function send() {
     if (count === 4) {
