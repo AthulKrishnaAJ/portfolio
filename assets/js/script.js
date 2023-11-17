@@ -59,7 +59,7 @@ function validate() {
 
 
 
-function send() {
+/*function send() {
     if (count == 4) {
 
         $("#submit-form").submit((e) => {
@@ -96,5 +96,42 @@ function send() {
         document.getElementById("send").innerHTML = "Please fill all fields";
         
          
+    }
+}*/
+
+function send() {
+    if (count === 4) {
+        $("#submit-form").submit((e) => {
+            e.preventDefault();
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwg0k5uAKid23ZOmOiXKywR8rwt9sFt9ZsmyNS6sA8S--fAcS45tTFP_qBYjFpMMwcyJA/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                beforeSend: function () {
+                    $("#load").show();
+                },
+                success: function () {
+                    $("#load").hide();
+                    $("#send").css({ display: "block", backgroundColor: "green" });
+                    $("#send").html("Your message has been sent successfully");
+
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                },
+                error: function (err) {
+                    $("#load").hide();
+                    $("#error").show();
+                    $("#error").html("Something went wrong. Try again");
+
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }
+            });
+        });
+    } else {
+        $("#send").css({ display: "block", backgroundColor: "red" });
+        $("#send").html("Please fill all fields");
     }
 }
